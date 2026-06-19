@@ -84,13 +84,13 @@ a {
 .section-title {
   font-family: var(--font-heading);
   font-size: clamp(20px, 4vw, 28px);
-  font-weight: 800;
+  font-weight: 700;
   color: var(--color-text);
   margin-bottom: var(--space-xs);
 }
 
 .section-sub {
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: var(--color-text-light);
   margin-bottom: var(--space-lg);
   line-height: 1.5;
@@ -113,11 +113,16 @@ a {
   border: none;
 }
 
-.btn-wa:hover,
+.btn-wa:hover {
+  background: var(--color-cta-wa-hover);
+  transform: translateY(-1px);
+}
+
 .btn-wa:focus-visible {
   background: var(--color-cta-wa-hover);
   transform: translateY(-1px);
   outline: 3px solid rgba(37, 211, 102, 0.4);
+  outline-offset: 2px;
 }
 
 .btn-wa svg { flex-shrink: 0; }
