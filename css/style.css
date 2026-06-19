@@ -560,3 +560,91 @@ a {
   .faq-q { font-size: 15px; }
   .faq-a { font-size: 14px; }
 }
+
+/* ===========================
+   FOOTER CTA
+=========================== */
+#footer-cta {
+  background: var(--color-primary);
+  padding: var(--space-xl) 0;
+  text-align: center;
+}
+
+.fca-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.fca-title {
+  font-family: var(--font-heading);
+  font-size: clamp(20px, 4vw, 28px);
+  font-weight: 700;
+  color: white;
+}
+
+.fca-sub {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 400px;
+}
+
+/* ===========================
+   FOOTER / RODAPÉ
+=========================== */
+#rodape {
+  background: #1A2A26;
+  padding: var(--space-md) 0;
+  text-align: center;
+}
+
+.rodape-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+#rodape p,
+#rodape a {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.6;
+}
+
+#rodape a:hover { color: rgba(255, 255, 255, 0.7); }
+
+/* ===========================
+   STICKY WHATSAPP — mobile only
+=========================== */
+#sticky-wa {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+}
+
+.sticky-wa-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  background: var(--color-cta-wa);
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 14px var(--space-md);
+  width: 100%;
+  transition: background var(--transition);
+}
+
+.sticky-wa-link:hover { background: var(--color-cta-wa-hover); }
+
+@media (min-width: 768px) {
+  #sticky-wa { display: none; }
+}
+
+@media (max-width: 767px) {
+  #rodape { padding-bottom: calc(var(--space-md) + 52px); }
+}
