@@ -126,3 +126,58 @@ a {
 }
 
 .btn-wa svg { flex-shrink: 0; }
+
+/* ===========================
+   NAV
+=========================== */
+#nav {
+  background: var(--color-primary);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-sm);
+  padding-bottom: var(--space-sm);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.nav-logo-img { height: 32px; width: auto; }
+
+.nav-logo-text {
+  color: white;
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.nav-crp {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 10px;
+}
+
+.nav-cta {
+  display: none;
+  font-size: 11px;
+  padding: 6px 14px;
+}
+
+@media (min-width: 768px) {
+  .nav-cta { display: inline-flex; }
+}
