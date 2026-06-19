@@ -351,3 +351,58 @@ a {
     grid-column: 1 / 2;
   }
 }
+
+/* ===========================
+   ABORDAGEM
+=========================== */
+#abordagem {
+  background: var(--color-bg-soft);
+  padding: var(--space-xl) 0;
+}
+
+.abord-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.abord-card {
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  border: 1px solid var(--color-primary-border);
+  display: flex;
+  gap: var(--space-md);
+  align-items: flex-start;
+  box-shadow: var(--shadow-card);
+}
+
+.abord-icon {
+  font-size: 28px;
+  flex-shrink: 0;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.abord-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-xs);
+}
+
+.abord-desc {
+  font-size: 12px;
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  #abordagem { padding: var(--space-2xl) 0; }
+
+  .abord-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+  }
+}
