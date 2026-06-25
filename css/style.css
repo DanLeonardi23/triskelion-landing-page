@@ -771,7 +771,8 @@ a {
 .fca-sub {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.85);
-  max-width: 400px;
+  max-width: 560px;
+  line-height: 1.6;
 }
 
 /* ===========================
