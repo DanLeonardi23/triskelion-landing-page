@@ -574,6 +574,102 @@ a {
 }
 
 /* ===========================
+   COMO FUNCIONA
+=========================== */
+#como-funciona {
+  background: var(--color-bg-soft);
+  padding: var(--space-xl) 0;
+}
+
+.cf-steps {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.cf-step {
+  display: flex;
+  gap: var(--space-md);
+  align-items: flex-start;
+}
+
+.cf-num {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-primary-border);
+  flex-shrink: 0;
+  line-height: 1;
+  min-width: 32px;
+}
+
+.cf-step-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-xs);
+}
+
+.cf-step-desc {
+  font-size: 12px;
+  color: var(--color-text-light);
+  line-height: 1.5;
+}
+
+.cf-note {
+  margin-top: var(--space-lg);
+  font-size: 12px;
+  font-style: italic;
+  color: var(--color-text-light);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  #como-funciona { padding: var(--space-2xl) 0; }
+
+  .cf-steps {
+    position: relative;
+    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-md);
+  }
+
+  .cf-steps::before {
+    content: "";
+    position: absolute;
+    top: 16px;
+    left: 12.5%;
+    right: 12.5%;
+    height: 1px;
+    background: var(--color-primary-border);
+    z-index: 0;
+  }
+
+  .cf-step {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cf-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    margin: 0 0 var(--space-sm) 0;
+  }
+}
+
+/* ===========================
    FAQ
 =========================== */
 #faq {
