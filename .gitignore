@@ -11,3 +11,5 @@ desktop.ini
 
 # Superpowers brainstorm files (not needed in git)
 .superpowers/
+
+.vercel
