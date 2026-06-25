@@ -339,10 +339,15 @@ a {
 }
 
 .esp-icon {
-  font-size: 22px;
   flex-shrink: 0;
   margin-top: 2px;
-  line-height: 1;
+  color: var(--color-primary);
+}
+
+.esp-icon svg {
+  width: 24px;
+  height: 24px;
+  display: block;
 }
 
 .esp-content { flex: 1; min-width: 0; }
