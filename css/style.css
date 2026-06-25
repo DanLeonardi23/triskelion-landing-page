@@ -525,6 +525,55 @@ a {
 }
 
 /* ===========================
+   PARA QUEM
+=========================== */
+#para-quem {
+  padding: var(--space-xl) 0;
+}
+
+.check-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  font-size: 13px;
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+.check-icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  font-weight: 700;
+  font-size: 12px;
+}
+
+@media (min-width: 768px) {
+  #para-quem { padding: var(--space-2xl) 0; }
+
+  .check-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg) var(--space-2xl);
+  }
+
+  .check-item { font-size: 14px; }
+}
+
+/* ===========================
    FAQ
 =========================== */
 #faq {
