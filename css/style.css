@@ -728,6 +728,24 @@ a {
 }
 
 /* ===========================
+   EXCLUSIVIDADE
+=========================== */
+#exclusividade {
+  background: var(--color-primary-light);
+  padding: var(--space-lg) 0;
+}
+
+.excl-text {
+  font-family: var(--font-heading);
+  font-size: clamp(14px, 2.5vw, 18px);
+  color: var(--color-primary-dark);
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ===========================
    FOOTER CTA
 =========================== */
 #footer-cta {
