@@ -248,7 +248,7 @@ a {
 }
 
 .hero-sub {
-  font-size: clamp(16px, 2.5vw, 19px);
+  font-size: clamp(16px, 2.5vw, 20px);
   color: var(--color-text-light);
   line-height: 1.6;
   margin-bottom: var(--space-lg);
@@ -440,7 +440,7 @@ a {
 
   .dif-photo-wrap { width: 280px; }
 
-  .dif-desc { font-size: 17px; }
+  .dif-desc { font-size: 18px; }
 }
 
 /* ===========================
@@ -522,7 +522,7 @@ a {
 
   .sobre-header { gap: var(--space-lg); }
 
-  .sobre-bio { font-size: 17px; }
+  .sobre-bio { font-size: 18px; }
 }
 
 /* ===========================
@@ -571,7 +571,7 @@ a {
     gap: var(--space-lg) var(--space-2xl);
   }
 
-  .check-item { font-size: 17px; }
+  .check-item { font-size: 18px; }
 }
 
 /* ===========================
@@ -724,8 +724,8 @@ a {
 
 @media (min-width: 768px) {
   #faq { padding: var(--space-2xl) 0; }
-  .faq-q { font-size: 18px; }
-  .faq-a { font-size: 17px; }
+  .faq-q { font-size: 19px; }
+  .faq-a { font-size: 18px; }
 }
 
 /* ===========================
@@ -774,6 +774,10 @@ a {
   color: rgba(255, 255, 255, 0.85);
   max-width: 560px;
   line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .fca-sub { font-size: 18px; }
 }
 
 /* ===========================
