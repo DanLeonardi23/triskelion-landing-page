@@ -89,6 +89,14 @@ a {
   margin-bottom: var(--space-xs);
 }
 
+/* Títulos sem subtítulo abaixo: espaço até o conteúdo padronizado em 24px,
+   igual ao que .section-sub já usa quando existe. */
+#dif-titulo,
+#para-quem-titulo,
+#cf-titulo {
+  margin-bottom: var(--space-lg);
+}
+
 .section-sub {
   font-size: 1rem;
   color: var(--color-text-light);
