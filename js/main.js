@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  var WA_NUMBER = '5511983868766';
+  var WA_NUMBER = '5511936245113';
   var WA_MESSAGE = 'Olá, gostaria de agendar uma consulta.';
   var WA_URL = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(WA_MESSAGE);
 
