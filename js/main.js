@@ -5,10 +5,20 @@
   var WA_MESSAGE = 'Olá, gostaria de agendar uma consulta.';
   var WA_URL = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(WA_MESSAGE);
 
+  // Identificador da conversão "Clique no WhatsApp" no Google Ads
+  var GADS_CONVERSION_LABEL = 'AW-18480596736/lO_kCOLBsokdEICOnuxE';
+
   // Dispara evento GA4 se gtag estiver carregado
   function trackEvent(eventName, params) {
     if (typeof window.gtag === 'function') {
       window.gtag('event', eventName, params);
+    }
+  }
+
+  // Dispara a conversão do Google Ads (sem dados pessoais, apenas o sinal de clique)
+  function trackConversion() {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'conversion', { send_to: GADS_CONVERSION_LABEL });
     }
   }
 
@@ -23,6 +33,7 @@
           event_category: 'CTA',
           event_label: label,
         });
+        trackConversion();
       });
     });
   }
