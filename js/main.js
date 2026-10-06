@@ -38,6 +38,32 @@
     });
   }
 
+  // Altura real do nav sticky, usada pelo scroll-padding-top do CSS
+  function updateNavHeight() {
+    var nav = document.getElementById('nav');
+    if (nav) {
+      document.documentElement.style.setProperty('--nav-h', nav.offsetHeight + 'px');
+    }
+  }
+
+  // Posição Y do alvo descontando nav e scroll-margin. Usa offsetTop (ignora
+  // o translateY das animações .reveal, que deslocaria o destino).
+  function targetScrollY(target) {
+    var y = 0;
+    for (var el = target; el; el = el.offsetParent) y += el.offsetTop;
+    var nav = document.getElementById('nav');
+    var margin = parseFloat(getComputedStyle(target).scrollMarginTop) || 0;
+    return Math.max(0, y - (nav ? nav.offsetHeight : 0) - margin);
+  }
+
+  function scrollToTarget(target, smooth) {
+    var html = document.documentElement;
+    var prev = html.style.scrollBehavior;
+    if (!smooth) html.style.scrollBehavior = 'auto';
+    window.scrollTo({ top: targetScrollY(target), behavior: smooth ? 'smooth' : 'auto' });
+    html.style.scrollBehavior = prev;
+  }
+
   // Smooth scroll para links âncora internos (nav desktop)
   function setupSmoothScroll() {
     var anchors = document.querySelectorAll('a[href^="#"]');
@@ -48,10 +74,37 @@
         var target = document.querySelector(href);
         if (target) {
           e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          scrollToTarget(target, true);
+          history.replaceState(null, '', href);
         }
       });
     });
+  }
+
+  // Abertura direta via URL com âncora (sitelinks do Google Ads, ex.: /#lideranca).
+  // Reposiciona após fontes e imagens carregarem, pois mudam a altura do layout,
+  // a menos que o usuário já tenha começado a rolar.
+  function setupHashLanding() {
+    var hash = window.location.hash;
+    if (!hash || hash === '#') return;
+    var target;
+    try { target = document.querySelector(hash); } catch (err) { return; }
+    if (!target) return;
+
+    var userScrolled = false;
+    ['wheel', 'touchstart', 'keydown'].forEach(function (evt) {
+      window.addEventListener(evt, function () { userScrolled = true; }, { once: true, passive: true });
+    });
+
+    function land() {
+      if (userScrolled) return;
+      updateNavHeight();
+      scrollToTarget(target, false);
+    }
+
+    land();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(land);
+    window.addEventListener('load', land);
   }
 
   function setupScrollAnimations() {
@@ -91,9 +144,13 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
+    updateNavHeight();
     setupWALinks();
     setupSmoothScroll();
     setupScrollAnimations();
+    setupHashLanding();
   });
+
+  window.addEventListener('resize', updateNavHeight);
 
 })();

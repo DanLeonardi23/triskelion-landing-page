@@ -53,7 +53,11 @@
   padding: 0;
 }
 
-html { scroll-behavior: smooth; }
+/* Compensa o nav sticky ao abrir âncoras (ex.: sitelinks /#lideranca) */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-h, 68px);
+}
 
 body {
   font-family: var(--font-body);
@@ -335,7 +339,7 @@ a {
 /* ===========================
    ESPECIALIDADES
 =========================== */
-#especialidades {
+#psicoterapia {
   padding: var(--space-xl) 0;
 }
 
@@ -355,6 +359,7 @@ a {
   background: #f7fbfa;
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
   transition: box-shadow var(--transition);
+  scroll-margin-top: var(--space-md);
 }
 
 .esp-item:hover {
@@ -389,7 +394,7 @@ a {
 }
 
 @media (min-width: 768px) {
-  #especialidades { padding: var(--space-2xl) 0; }
+  #psicoterapia { padding: var(--space-2xl) 0; }
 
   .esp-list {
     display: grid;
@@ -585,7 +590,7 @@ a {
 /* ===========================
    COMO FUNCIONA
 =========================== */
-#como-funciona {
+#abordagem {
   background: var(--color-bg-soft);
   padding: var(--space-xl) 0;
 }
@@ -635,7 +640,7 @@ a {
 }
 
 @media (min-width: 768px) {
-  #como-funciona { padding: var(--space-2xl) 0; }
+  #abordagem { padding: var(--space-2xl) 0; }
 
   .cf-steps {
     position: relative;
@@ -757,7 +762,7 @@ a {
 /* ===========================
    FOOTER CTA
 =========================== */
-#footer-cta {
+#agendamento {
   background: var(--color-primary);
   padding: var(--space-xl) 0;
   text-align: center;
